@@ -17,6 +17,9 @@ public class CalcTest {
         // if calc.add(7, 9) == 16 -> pass
         // otherwise fail
         Assertions.assertEquals(16, this.calc.add(7, 9));
+        // won't hit this if the previous assertion fails
+        Assertions.assertEquals(32, this.calc.add(16, 16));
+
     }
 
 
@@ -28,7 +31,7 @@ public class CalcTest {
 
     @Test // flags this as a test method
     void testDivide() {
-        Assertions.assertEquals(3.3, this.calc.divide(9, 3));
+        Assertions.assertEquals(3.3, this.calc.divide(10, 3), 0.1);
     }
 
 
