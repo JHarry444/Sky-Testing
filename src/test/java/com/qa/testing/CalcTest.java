@@ -1,6 +1,7 @@
 package com.qa.testing;
 
 import com.qa.main.testing.Calculator;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 // maven auto finds any class that begins or ends with 'Test'
@@ -13,24 +14,26 @@ public class CalcTest {
 
     @Test        // flags this as a test method
     void testAdd() {
-
+        // if calc.add(7, 9) == 16 -> pass
+        // otherwise fail
+        Assertions.assertEquals(16, this.calc.add(7, 9));
     }
 
 
     @Test // flags this as a test method
-    void test() {
-
+    void testSubtract() {
+        Assertions.assertEquals(8, this.calc.subtract(19, 11));
     }
 
 
     @Test // flags this as a test method
-    void testAdd() {
-
+    void testDivide() {
+        Assertions.assertEquals(3.3, this.calc.divide(9, 3));
     }
 
 
     @Test // flags this as a test method
-    void testAdd() {
-
+    void testMultiply() {
+        Assertions.assertEquals(108, this.calc.multiply(9, 12));
     }
 }
